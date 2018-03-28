@@ -541,7 +541,7 @@ chat = {
 				result += '	<div class="info date_unread">';
 				var time = new Date(contact.last_message.time * 1000);
 				result += '		<div class="date">' + (time.getDate() == new Date().getDate() ? (time.getHours() <= 9 ? "0" + time.getHours() : time.getHours()) + ":" + (time.getMinutes() <= 9 ? "0" + time.getMinutes() : time.getMinutes()) : (time.getDate() <= 9 ? "0" + time.getDate() : time.getDate()) + "." +  (time.getMonth() <= 9 ? "0" + time.getMonth() : time.getMonth())) + '</div>';
-				result += '		<div class="unread z-depth-1">' + contact.unread_messages + '</div>'; 
+				result += '		<div class="unread"' + (contact.unread_messages <= 0 ? ' style="display: none;"' : "") + '">' + (contact.unread_messages > 0 ? contact.unread_messages : "") + '</div>'; 
 				result += '	</div>';
 				result += '</div>';
 			}
